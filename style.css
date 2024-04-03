@@ -14,9 +14,11 @@ body {
 .screen {
     display: flex;
     flex-direction: row;
-    
     justify-content: space-around;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
 }
 
 main {
@@ -24,65 +26,23 @@ main {
     justify-content: center;
     align-items: center;
 
-    margin-top: 100px;
-    /* width: min(684.8px, 90%); */
-    height: 660px;
+    margin-top: 1rem;
+    /* width: min(42.8rem, 90%); */
+    height: 41.25rem;
     background: #FFFFFF;
-    box-shadow: 0px 20px 50px 0px rgba(128, 127, 127, 0.8);
-    border-radius: 40px;
+    box-shadow: 0rem 1.25rem 3.125rem 0rem rgba(128, 127, 127, 0.8);
+    border-radius: 2.5rem;
     background-color: #2182BF;
 }
 
-
-.container-itens-navbar img{
-    height: 85px;
-    margin-top: 6px;
-    margin-left: 5px;
-
-    padding-bottom: 5px;
-
-
-    background-color: #d6d6d6; 
-}
-
-.container-itens-navbar nav {
-    display: flex;
-    flex-direction: row;
-}
-
-ul {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    
-    padding-bottom: 10px;
-    background-color: #d6d6d6;
-
-    list-style: none;
-
-    width: 100vw;
-    height: 60px;
-}
-
-li{
-    font-family: 'Poppins';
-    font-weight: 400;
-    font-size: 18px;
-    
-    color: #2A5276;
-
-    text-decoration: none;
-
-}
 
 .screen1 {
     display: flex;
     align-items: start;
     justify-content: start;
     flex-direction: column;
-    width: 480px;
-    margin: 76.8px ;
+    width: 30rem;
+    margin: 4.8rem ;
     background-color: #2182BF;
     color: white;
     font-size: 13pt;
@@ -92,11 +52,11 @@ li{
 input {
     outline: none;
     border: none;
-    border-bottom: 1px solid white;
+    border-bottom: .0625rem solid white;
     background-color: transparent;
     color: white;
     font-size: 14pt;
-    margin-top: 15px;
+    margin-top: .9375rem;
     
 
     width: 100%;
@@ -105,28 +65,28 @@ input {
 .screen1 button {
     position: relative;
     display: inline-block;
-    margin: 15px;
-    padding: 15px 30px;
+    margin: .9375rem;
+    padding: .9375rem 1.875rem;
     text-align: center;
-    font-size: 18px;
-    letter-spacing: 1px;
+    font-size: 1.125rem;
+    letter-spacing: .0625rem;
     text-decoration: none;
     color: white;
     background: transparent;
     cursor: pointer;
     transition: ease-out 0.5s;
-    border: 2px solid white;
-    border-radius: 10px;
+    border: .125rem solid white;
+    border-radius: .625rem;
     box-shadow: inset 0 0 0 0 white;
     
-    margin-top: 40px;
-    margin-left: 180px;
+    margin-top: 2.5rem;
+    margin-left: 11.25rem;
 }
 
 button:hover {
     color: black;
-    box-shadow: inset 0 -100px 0 0 white;
-    transform: translateY(5px) scale(1.05);
+    box-shadow: inset 0 -6.25rem 0 0 white;
+    transform: translateY(.3125rem) scale(1.05);
   }
 
   button:active {
@@ -135,26 +95,28 @@ button:hover {
 
 
 
-.screen1  select{
+.screen1 select{
     outline: none;
     border: none;
-    border-bottom: 1px solid white;
+    border-bottom: .0625rem solid white;
     background-color: transparent;
-    color: orange;
+    color: white;
     font-size: 14pt;
-    margin-top: 15px;
-    padding-bottom: 10px;
+    margin-top: .9375rem;
+    padding-bottom: .625rem;
     
 
     width: 100%;
 }
 
-  
+option{
+    color: black;
+}
   
 @keyframes downtop {
     0% {
         opacity: 0;
-        margin-top: 5rem;
+        margin-top: 80px;
     }
 
     25% {
@@ -174,9 +136,9 @@ button:hover {
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 26.5625rem) {
     .screen1 {
-        margin: 4.8rem 2rem 6.4rem .3rem;
+        margin: 76.8px 32px 102.4px 4.8px;
     }
 
     .message {
@@ -190,12 +152,13 @@ button:hover {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    row-gap: 40px;
+    height: 41.25rem;
 
     background-color: #d6d6d6;
-    margin-top: 50px;
-    border-radius: 40px;
+    box-shadow: 0rem 1.25rem 3.125rem 0rem rgba(128, 127, 127, 0.8);
+    margin-top: 1rem;
+    border-radius: 2.5rem;
 
-    height: 800px;
-    width: 1000px;
+    text-align: center;
+    padding: 0 40px;
 }
