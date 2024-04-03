@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+
+  <link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Calculadora Financeira Winda's</title>
+</head>
+
+<body>
+
+  
+  <div class="container-itens-navbar">
+    
+    <nav>
+      <img src="src/windas-logo.png" alt="Winda's Logo">
+      <ul>
+        <li>Home</li>
+        <li>Saiba Mais</li>
+        <li>Simulador Financeiro</li>
+        <li>Fale Conosco</li>
+        <li>Login</li>
+      </ul>
+    </nav>
+
+  </div>
+  
+  <div class="screen">
+    <main>
+      <div class="screen1"> 
+        Quanto ares-condicionados possui: <br>
+        <input id="input_qtd_ar_condicionado"><br> <br>
+        <br>
+        Por quantas horas permanecem ligados: <br>
+        <input id="input_qtd_horas"><br> <br>
+        <br>
+        Por quantos dias permanecem ligados: <br>
+        <input id="input_qtd_dias"><br> <br>
+        <br>
+        BTUs dos aparelhos:
+
+        <br>
+
+        <select id="select_btu">
+          <option value="7000">7000</li>
+          <option value="9000">9000</li>
+          <option value="12000">12000</li>
+          <option value="16000">16000</li>
+          <option value="20000">20000</li>
+          <option value="24000">24000</li>
+          <option value="28000">28000</li>
+          <option value="32000">32000</li>
+          <option value="36000">36000</li>
+          <option value="40000">40000</li>
+          <option value="48000">48000</li>
+          <option value="56000">56000</li>
+        </select>
+
+          <button onclick="calculo()">
+            Calcular
+          </button>
+        
+      </div>
+
+    </main>
+    <div id="div_resultado"></div>
+
+
+  </div>
+</body>
+
+</html>
+
+<script>
+
+  document.getElementById("div_resultado").innerHTML = div_resultado.style.display = 'none';
+
+function calculo() {
+
+    let qtdArCondicionado = Number(input_qtd_ar_condicionado.value);
+    let horasUso = Number(input_qtd_horas.value);
+    let diasUso = Number(input_qtd_dias.value);
+    let btu = Number(select_btu.value);
+
+    let wattsAr = btu * 0.293;
+    let contaKwHMes = (wattsAr * horasUso * diasUso) / 1000;
+    let gastoFinal = contaKwHMes * 0.4 * qtdArCondicionado;
+
+  document.getElementById("div_resultado").innerHTML = div_resultado.style.display = 'flex';
+
+  div_resultado.innerHTML = `De acordo com os valores mencionados,
+  seu gasto em KwH/mes com ar condicionados são de <b>${contaKwHMes.toFixed(2)}</b>Kwh/mes.
+  <br>
+  <br>
+  Sua conta poderá reduzir em 60% utilizando nosso sistema, 
+  fazendo com que os gastos de <b>R$${gastoFinal.toFixed(2)}</b>
+  <br>
+  Passem a ser de <b>R$${(gastoFinal * 0.4).toFixed(2)}.</b>
+  <br>
+  <br>
+  Adquira sua Winda!
+  <br>
+  <br>
+  O que você esta esperando para ter a praticidade em um sistema
+  na palma da sua mão?`
+
+  }
+
+</script>
