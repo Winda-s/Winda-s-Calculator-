@@ -21,6 +21,12 @@
 
 <body>
 
+  <button class="button_back">
+    <img src="src/arrow-ios-back-svgrepo-com.svg" alt="button-back"> Voltar à página inicial
+  </button>
+  <br>
+  
+
 
   <!--   <div class="container-itens-navbar">
     
@@ -60,7 +66,7 @@
           <option value="rj">RJ</option>
           <option value="am">AM</option>
           <option value="ac">AC</option>
-          <option value="na">BA</option>
+          <option value="ba">BA</option>
           <option value="df">DF</option>
           <option value="pe">PE</option>
           <option value="to">TO</option>
@@ -143,7 +149,7 @@
     } else if (tarifaRegional == 'am') {
       valorTarifa = 0.83;
     } else if (tarifaRegional == 'ba') {
-      valorTarifa = 0.80
+      valorTarifa = 0.80;
     } else if (tarifaRegional == 'ce') {
       valorTarifa = 0.74;
     } else if (tarifaRegional == 'df') {
@@ -186,19 +192,15 @@
 
 
     div_resultado.innerHTML = `De acordo com os valores mencionados,
-  seu gasto em KwH/mes com ar condicionados são de <b style="color: red;">${contaKwHMes.toFixed(2)}</b>Kwh/mes.
+  seu gasto em KwH/mes com ar condicionados são de: <b style="color: red;">${gastoFinal.toFixed(2)}</b>Kwh/mes.
   <br>
   <br>
   Estima-se que cerca de 29% do valor de sua conta pode ser reduzido utilizando nosso sistema, 
-  fazendo com que os gastos de <b style="color: red;">R$${gastoFinal.toFixed(2)}</b>
+  fazendo com que os gastos de: <b style="color: red;">R$${gastoFinal.toFixed(2)}</b>
   <br>
-  Passem a ser de <b style="color: green;">R$${(economia).toFixed(2)}</b>
+  Passem a ser de: <b style="color: green;">R$${(economia).toFixed(2)}</b>
   <br>
-  Adquira sua Winda!
-  <br>
-  <br>
-  O que você esta esperando para ter a praticidade em um sistema
-  na palma da sua mão?`
+  Adquira sua Winda!`
 
   }
 
