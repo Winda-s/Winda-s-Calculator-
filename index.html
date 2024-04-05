@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,33 +27,24 @@
   <br>
   
 
-
-  <!--   <div class="container-itens-navbar">
-    
-    <nav>
-      <img src="src/windas-logo.png" alt="Winda's Logo">
-      <ul>
-        <li>Home</li>
-        <li>Saiba Mais</li>
-        <li>Simulador Financeiro</li>
-        <li>Fale Conosco</li>
-        <li>Login</li>
-      </ul>
-    </nav>
-
-  </div> -->
-
   <div class="screen">
     <main id="principal" class="principal">
       <div class="screen1">
-        Quanto ares-condicionados possui: <br>
-        <input id="input_qtd_ar_condicionado"><br> <br>
-        <br>
-        Por quantas horas por dia permanecem ligados(em média): <br>
-        <input id="input_qtd_horas"><br> <br>
-        <br>
-        Por quantos dias por mês permanecem ligados: <br>
-        <input id="input_qtd_dias"><br> <br>
+
+          Quanto ares-condicionados possui:
+          <input required="" type="text" id="input_qtd_ar_condicionado">
+          <span class="highlight"></span>
+          <span class="bar"></span><br><br>
+          Por quantas horas por dia permanecem ligados(em média):
+          <input required="" type="text" id="input_qtd_horas">
+          <span class="highlight2"></span>
+          <span class="bar2"></span><br><br>
+          Por quantas horas por dia permanecem ligados(em média):
+          <input required="" type="text" id="input_qtd_dias">
+          <span class="highlight3"></span>
+          <span class="bar3"></span>
+        
+
         <br>
         Tarifa regional de energia: <br>
         <select id="select_tarifa_regional">
@@ -121,7 +112,6 @@
     </main>
     <div id="div_resultado" style="display: none;" class="animate__animated animate__fadeInRight"></div>
 
-
   </div>
 </body>
 
@@ -187,9 +177,6 @@
     
     principal.style.animation = "animMain 1s";
     document.getElementById("div_resultado").innerHTML = div_resultado.style.display = 'flex';
-
-    
-
 
     div_resultado.innerHTML = `De acordo com os valores mencionados,
   seu gasto em KwH/mes com ar condicionados são de: <b style="color: red;">${gastoFinal.toFixed(2)}</b>Kwh/mes.

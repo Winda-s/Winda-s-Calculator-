@@ -15,7 +15,7 @@ body {
     position: relative;
     top: 10px;
     left: 10px;
-    
+
     border: none;
     border-radius: 10px;
 
@@ -28,7 +28,7 @@ body {
     align-items: center;
 }
 
-.button_back img{
+.button_back img {
     width: 60px;
     height: 60px;
     color: white;
@@ -40,11 +40,11 @@ body {
     transform: translateY(.3000rem) scale(1.05);
     transition: 0.2s;
     transition-property: all;
-  }
+}
 
 .button_back:active {
     transform: scale(0.9);
-  }
+}
 
 .screen {
     display: flex;
@@ -54,7 +54,7 @@ body {
     width: 100%;
     height: 100%;
     flex-wrap: wrap;
-    
+
 }
 
 main {
@@ -63,27 +63,14 @@ main {
     align-items: center;
 
     margin-top: 1rem;
-    /* width: min(42.8rem, 90%); */
     height: 44.25rem;
     background: #FFFFFF;
     box-shadow: 0rem 1.25rem 3.125rem 0rem rgba(128, 127, 127, 0.8);
     border-radius: 2.5rem;
     background-color: #2182BF;
 
-    
+    animation: downtop 0.8s ease;
 }
-
-@keyframes animMain {
-    from {
-        position: relative;
-        right: -550px;
-    } 
-    to {
-        position: relative;
-        right: 0px;
-    }
-}
-
 
 .screen1 {
     display: flex;
@@ -93,7 +80,7 @@ main {
 
     width: 33rem;
     height: 640px;
-    margin: 4.8rem ;
+    margin: 4.8rem;
 
     background-color: #2182BF;
     color: white;
@@ -110,9 +97,108 @@ input {
     color: white;
     font-size: 14pt;
     margin-top: .9375rem;
-    
+
 
     width: 100%;
+}
+
+#input_qtd_ar_condicionado,
+#input_qtd_horas,
+#input_qtd_dias {
+    font-size: 16px;
+    padding: 0px 0px 0px 0px;
+    display: block;
+    width: 535px;
+    border: none;
+    border-bottom: 1px solid #949697;
+    background: transparent;
+}
+
+#input_qtd_ar_condicionado:focus,
+#input_qtd_horas:focus,
+#input_qtd_dias {
+    outline: none;
+}
+
+.bar,
+.bar2,
+.bar3 {
+    position: relative;
+    display: block;
+    width: 535px;
+}
+
+.bar:before,
+.bar:after,
+.bar2:before,
+.bar2:after,
+.bar3:before,
+.bar3:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #fdfdff;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before,
+.bar2:before,
+.bar3:before {
+    left: 50%;
+}
+
+.bar:after,
+.bar2:after,
+.bar3:after {
+    right: 50%;
+}
+
+#input_qtd_ar_condicionado:focus~.bar:before,
+#input_qtd_ar_condicionado:focus~.bar:after,
+#input_qtd_horas:focus~.bar2:before,
+#input_qtd_horas:focus~.bar2:after,
+#input_qtd_dias:focus~.bar3:before,
+#input_qtd_dias:focus~.bar3:after {
+    width: 50%;
+}
+
+.highlight,
+.highlight2,
+.highlight3 {
+    position: absolute;
+    height: 50%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+#input:focus~.highlight,
+#input:focus~.highlight2,
+#input:focus~.highlight3 {
+    animation: inputHighlighter 0.3s ease;
+}
+
+.screen1 select {
+    outline: none;
+    border: none;
+    border-bottom: .0625rem solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 14pt;
+    margin-top: .9375rem;
+    padding-bottom: .625rem;
+
+    width: 100%;
+}
+
+option {
+    color: black;
 }
 
 .screen1 button {
@@ -131,7 +217,7 @@ input {
     border: .125rem solid white;
     border-radius: .625rem;
     box-shadow: inset 0 0 0 0 white;
-    
+
     margin-top: 2.5rem;
     margin-left: 11.25rem;
 }
@@ -140,32 +226,42 @@ input {
     color: black;
     box-shadow: inset 0 -6.25rem 0 0 white;
     transform: translateY(.3125rem) scale(1.05);
-  }
+}
 
-  .screen1 button:active {
+.screen1 button:active {
     transform: scale(0.9);
-  }
-
-
-
-.screen1 select{
-    outline: none;
-    border: none;
-    border-bottom: .0625rem solid white;
-    background-color: transparent;
-    color: white;
-    font-size: 14pt;
-    margin-top: .9375rem;
-    padding-bottom: .625rem;
-    
-
-    width: 100%;
 }
 
-option{
-    color: black;
+#div_resultado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 41.25rem;
+
+    background-color: #d6d6d6;
+    box-shadow: 0rem 1.25rem 3.125rem 0rem rgba(128, 127, 127, 0.8);
+    margin-top: 1rem;
+    border-radius: 2.5rem;
+
+    text-align: center;
+    padding: 0 40px;
 }
-  
+
+#div_resultado b {
+    font-size: 20pt;
+}
+
+@media (max-width: 26.5625rem) {
+    .screen1 {
+        margin: 76.8px 32px 102.4px 4.8px;
+    }
+
+    .message {
+        background: #FFFFFF;
+    }
+}
+
 @keyframes downtop {
     0% {
         opacity: 0;
@@ -189,121 +285,25 @@ option{
     }
 }
 
-@media (max-width: 26.5625rem) {
-    .screen1 {
-        margin: 76.8px 32px 102.4px 4.8px;
+@keyframes inputHighlighter {
+    from {
+        background: #838585;
     }
 
-    .message {
-        background: #FFFFFF;
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes animMain {
+    from {
+        position: relative;
+        right: -550px;
     }
 
+    to {
+        position: relative;
+        right: 0px;
+    }
 }
-
-#div_resultado {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 41.25rem;
-
-    background-color: #d6d6d6;
-    box-shadow: 0rem 1.25rem 3.125rem 0rem rgba(128, 127, 127, 0.8);
-    margin-top: 1rem;
-    border-radius: 2.5rem;
-
-    text-align: center;
-    padding: 0 40px;
-} 
-
-#div_resultado b {
-    font-size: 20pt;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.form {
-    --width-of-input: 200px;
-    --border-height: 1px;
-    --border-before-color: rgba(221, 221, 221, 0.39);
-    --border-after-color: #5891ff;
-    --input-hovered-color: #4985e01f;
-    position: relative;
-    width: var(--width-of-input);
-   }
-
-   .input {
-    color: #fff;
-    font-size: 0.9rem;
-    background-color: transparent;
-    width: 100%;
-    box-sizing: border-box;
-    padding-inline: 0.5em;
-    padding-block: 0.7em;
-    border: none;
-    border-bottom: var(--border-height) solid var(--border-before-color);
-   }
-  
-   .input-border {
-    position: absolute;
-    background: var(--border-after-color);
-    width: 0%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    transition: 0.3s;
-   }
-   /* Hover on Input */
-   input:hover {
-    background: var(--input-hovered-color);
-   }
-   
-   input:focus {
-    outline: none;
-   }
-  
-   input:focus ~ .input-border {
-    width: 100%;
-   }
-   
