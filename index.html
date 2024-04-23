@@ -31,24 +31,22 @@
     <main id="principal" class="principal">
       <div class="screen1">
 
-          Quanto ares-condicionados possui:
-          <input required="" type="text" id="input_qtd_ar_condicionado">
+         <h4>Quantos ares-condicionados possui:</h4> 
+          <input required="" type="text" id="input_qtd_ar_condicionado" placeholder="Informe um número">
           <span class="highlight"></span>
-          <span class="bar"></span><br><br>
-          Por quantos dias do mês permanecem ligados(em média):
-          <input required="" type="text" id="input_qtd_horas">
+          <span class="bar"></span><br>
+          <h4>Por quantos dias do mês permanecem ligados<br>(em média):</h4>
+          <input required="" type="text" id="input_qtd_horas" placeholder="Quantidade de dias">
           <span class="highlight2"></span>
-          <span class="bar2"></span><br><br>
-          Por quantas horas por dia permanecem ligados(em média):
-          <input required="" type="text" id="input_qtd_dias">
+          <span class="bar2"></span><br>
+          <h4>Por quantas horas por dia permanecem ligados<br>(em média):</h4>
+          <input required="" type="text" id="input_qtd_dias" placeholder="Quantidade de horas">
           <span class="highlight3"></span>
-          <span class="bar3"></span>
+          <span class="bar3"></span><br>
         
-
-        <br>
-        Tarifa regional de energia: <br>
+        <h4>Tarifa regional de energia:</h4> 
         <select id="select_tarifa_regional">
-          <option>--Selecione o estado--</option>
+          <option>Selecione o estado</option>
           <option value="pa">PA</option>
           <option value="mt">MT</option>
           <option value="ms">MS</option>
@@ -77,18 +75,11 @@
           <option value="sc">SC</option>
         </select>
 
-        BTUs dos aparelhos:
-
-        <!-- <div class="form">
-          Quanto ares-condicionados possui:
-          <input class="input"  required="" type="text">
-          <span class="input-border"></span>
-        </div> -->
-
-
         <br>
 
+       <h4>Potência do seu ar-condicionado em BTUs:</h4>
         <select id="select_btu">
+          <option>Selecione o valor da potência em BTUs</option>
           <option value="7000">7000</li>
           <option value="9000">9000</li>
           <option value="12000">12000</li>
@@ -110,7 +101,13 @@
       </div>
 
     </main>
-    <div id="div_resultado" style="display: none;" class="animate__animated animate__fadeInRight"></div>
+    <div class="container">
+      <div id="div_resultado" style="display: none;" class="animate__animated animate__fadeInRight"></div>
+      <div id="div_resultado2" style="display: none;" class="animate__animated animate__fadeInRight"></div>
+      <div id="div_resultado3" style="display: none;" class="animate__animated animate__fadeInRight"></div>
+
+    </div>
+   
 
   </div>
 </body>
@@ -173,21 +170,28 @@
     }
 
     let gastoFinal = contaKwHMes * valorTarifa * qtdArCondicionado;
-    let economia = gastoFinal - (gastoFinal * 0.29);
+    let economia = gastoFinal - (gastoFinal * 0.15);
     
     principal.style.animation = "animMain 1s";
     document.getElementById("div_resultado").innerHTML = div_resultado.style.display = 'flex';
+    document.getElementById("div_resultado").innerHTML = div_resultado2.style.display = 'flex';
+    document.getElementById("div_resultado").innerHTML = div_resultado3.style.display = 'flex';
 
     div_resultado.innerHTML = `De acordo com os valores mencionados,
-  seu gasto em KwH/mes com ar condicionados são de: <b style="color: red;">${gastoFinal.toFixed(2)}</b>Kwh/mes.
-  <br>
-  <br>
-  Estima-se que cerca de 29% do valor de sua conta pode ser reduzido utilizando nosso sistema, 
-  fazendo com que os gastos de: <b style="color: red;">R$${gastoFinal.toFixed(2)}</b>
+  seu gasto em KwH/mes com ares-condicionados são de: <b style="color: red;">${contaKwHMes.toFixed(2)}</b>Kwh/mês.`
+
+  div_resultado2.innerHTML = `<br>Estima-se que cerca de 15% do valor de sua conta de energia, <br>poderá ser reduzida utilizando nosso sistema. <br> 
+  Fazendo com que os gastos de: <br> <b style="color: red;">R$${gastoFinal.toFixed(2)}</b>
   <br>
   Passem a ser de: <b style="color: green;">R$${(economia).toFixed(2)}</b>
-  <br>
-  Adquira sua Winda!`
+  <br>`
+
+  div_resultado3.innerHTML = `O uso excessivo do ar-condicionado pode acarretar diversos malefícios para a saúde, 
+  como a propagação de vírus e bactérias em ambientes fechados, podendo afetar seus hóspedes e funcionários, 
+  e ao meio ambiente pois devido o consumo elevado de energia elétrica é produzido mais emissões de gases de efeito estufa,
+  ocasionando assim mudanças climáticas.<br>
+  Portanto adquira sua <b style="color: #2182BF;">Winda</b>
+Com nosso produto você irá priorizar uma alternativa mais sustentável que irá mitigar esses impactos negativos!`
 
   }
 
